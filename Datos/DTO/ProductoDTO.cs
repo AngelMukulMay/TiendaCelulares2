@@ -25,7 +25,7 @@ namespace Datos.DTO
         /// <summary>
         /// Al modificarse los valores de la lista, se levanta un evento que indica que hubieron cambios.
         /// </summary>
-        /// <param name="cPropiedadNombre">Nombre de la propiedad</param>
+        /// <param name="cPropiedadNombre">Nombre de la propiedad.</param>
         protected virtual void OnPropretyChanged(string cPropiedadNombre)
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(cPropiedadNombre));

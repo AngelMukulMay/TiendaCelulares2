@@ -11,26 +11,19 @@ namespace Tienda2
         private BindingList<ProductoDTO> lstProductos;
         private BindingList<VentaDTO> lstVentas;
 
+        Producto objProducto = new Producto();
+        Venta objVenta = new Venta();
+
         public Form1()
         {
             InitializeComponent();
 
-            this.lstProductos = new BindingList<ProductoDTO>();
-            this.lstVentas = new BindingList<VentaDTO>();
-            this.AñadirProductos();
+            lstProductos = objProducto.LstProductos();
+            lstVentas = objVenta.LstVentas();
+
             this.dgvProductos.DataSource = lstProductos;
             this.dgvVentas.DataSource = lstVentas;
 
-        }
-
-        /// <summary>
-        /// Añade los productos a una lista.
-        /// </summary>
-        private void AñadirProductos()
-        {
-            this.lstProductos.Add(new ProductoDTO { cNombre = "Galaxy Note", dPrecio = 12000 });
-            this.lstProductos.Add(new ProductoDTO { cNombre = "Galaxy Note plus ", dPrecio = 15000 });
-            this.lstProductos.Add(new ProductoDTO { cNombre = "Galaxy Note 10", dPrecio = 19000 });
         }
 
         /// <summary>
@@ -39,23 +32,22 @@ namespace Tienda2
         /// <param name="datosProducto"></param>
         private void AñadirVenta(VentaDTO datosProducto)
         {
-            this.lstVentas.Add(datosProducto);
+            objVenta.AñadirVenta(datosProducto);
         }
 
         private void btnComprar_Click(object sender, EventArgs e)
         {
 
-            ValidarFilaDGV objValidarFila = new ValidarFilaDGV();
+            DGV objDGV = new DGV();
 
             Imprimir objImprimir = new Imprimir();
 
-            bool filaSeleccionada = objValidarFila.ValidarFilaSeleccionada(dgvProductos);
+            bool filaSeleccionada = objDGV.ValidarFilaSeleccionada(dgvProductos);
 
             if (filaSeleccionada)
             {
-                DataGridViewDato objDataGridViewDato = new DataGridViewDato();
 
-                VentaDTO datosProducto = objDataGridViewDato.ObtenerDatosSeleccionadosDGV(dgvProductos);
+                VentaDTO datosProducto = objDGV.ObtenerDatosSeleccionadosDGV(dgvProductos);
 
                 AñadirVenta(datosProducto);
 
@@ -80,5 +72,6 @@ namespace Tienda2
             dgvProductos.ClearSelection();
             dgvVentas.ClearSelection();
         }
+
     }
 }

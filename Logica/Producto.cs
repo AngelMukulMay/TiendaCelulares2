@@ -1,17 +1,23 @@
-﻿using Datos;
+﻿using Datos.DTO;
+using Datos.Model;
+using Interfaces;
+using System.ComponentModel;
 
 namespace Logica
 {
-    public class Producto : AbsProducto
+    /// <summary>
+    /// Clase que contiene las operaciones de un producto.
+    /// </summary>
+    public class Producto : IProducto
     {
-        public override string cNombre()
+        public void AñadirProducto(ProductoDTO Producto)
         {
-            throw new System.NotImplementedException();
+            ProductoModel.lstProductosModel.Add(Producto);
         }
 
-        public override decimal dPrecio()
+        public BindingList<ProductoDTO> LstProductos()
         {
-            throw new System.NotImplementedException();
+            return ProductoModel.lstProductosModel;
         }
     }
 }

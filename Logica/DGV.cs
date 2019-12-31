@@ -1,12 +1,13 @@
 ﻿using Datos.DTO;
+using System;
 using System.Windows.Forms;
 
 namespace Logica
 {
     /// <summary>
-    /// Clase que sirve para obtener los datos seleccionados del datagridview.
+    /// Clase que contiene las operaciones de un datagridview.
     /// </summary>
-    public class DataGridViewDato
+    public class DGV
     {
         public VentaDTO ObtenerDatosSeleccionadosDGV(DataGridView cNombreDGV)
         {
@@ -20,7 +21,21 @@ namespace Logica
 
             Producto.dPrecio = dPrecioProducto;
 
+            Producto.dtFechaCompra = DateTime.Today;
+
             return Producto;
+        }
+
+        public bool ValidarFilaSeleccionada(DataGridView cNombreDGV)
+        {
+            if (cNombreDGV.SelectedRows.Count > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

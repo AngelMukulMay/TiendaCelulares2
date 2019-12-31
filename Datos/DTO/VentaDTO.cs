@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 
 namespace Datos.DTO
 {
@@ -11,15 +12,18 @@ namespace Datos.DTO
 
         private decimal Precio;
 
+        private DateTime FechaCompra;
+
         public VentaDTO()
         {
 
         }
 
-        public VentaDTO(string cNombre, decimal dPrecio)
+        public VentaDTO(string cNombre, decimal dPrecio, DateTime dtFechaCompra)
         {
             this.cNombre = cNombre;
             this.dPrecio = dPrecio;
+            this.dtFechaCompra = dtFechaCompra;
         }
 
         /// <summary>
@@ -42,6 +46,7 @@ namespace Datos.DTO
                 if (this.Nombre != value)
                 {
                     this.Nombre = value;
+
                     this.OnPropretyChanged("cNombre");
                 }
             }
@@ -58,7 +63,26 @@ namespace Datos.DTO
                 if (this.Precio != value)
                 {
                     this.Precio = value;
+
                     this.OnPropretyChanged("dPrecio");
+                }
+            }
+        }
+
+        public DateTime dtFechaCompra
+        {
+            get
+            {
+                return this.FechaCompra;
+            }
+            set
+            {
+                if (this.FechaCompra != value)
+                {
+
+                    this.FechaCompra = value;
+
+                    this.OnPropretyChanged("dtFechaCompra");
                 }
             }
         }
