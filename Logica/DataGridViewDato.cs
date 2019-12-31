@@ -1,11 +1,11 @@
 ﻿using Datos.DTO;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows.Forms;
 
 namespace Logica
 {
+    /// <summary>
+    /// Clase que sirve para obtener los datos seleccionados del datagridview.
+    /// </summary>
     public class DataGridViewDato
     {
         public VentaDTO ObtenerDatosSeleccionadosDGV(DataGridView cNombreDGV)

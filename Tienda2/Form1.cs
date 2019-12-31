@@ -23,6 +23,9 @@ namespace Tienda2
 
         }
 
+        /// <summary>
+        /// Añade los productos a una lista.
+        /// </summary>
         private void AñadirProductos()
         {
             this.lstProductos.Add(new ProductoDTO { cNombre = "Galaxy Note", dPrecio = 12000 });
@@ -30,6 +33,10 @@ namespace Tienda2
             this.lstProductos.Add(new ProductoDTO { cNombre = "Galaxy Note 10", dPrecio = 19000 });
         }
 
+        /// <summary>
+        /// Añade un producto seleccionado a la lista de ventas.
+        /// </summary>
+        /// <param name="datosProducto"></param>
         private void AñadirVenta(VentaDTO datosProducto)
         {
             this.lstVentas.Add(datosProducto);
