@@ -55,7 +55,7 @@ namespace Datos.DTO
             }
             set
             {
-                if(this.Precio != value)
+                if (this.Precio != value)
                 {
                     this.Precio = value;
                     this.OnPropretyChanged("dPrecio");

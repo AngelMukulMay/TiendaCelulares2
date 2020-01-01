@@ -81,11 +81,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Datos\Datos.csproj">
-      <Project>{98400A72-BCF4-4E38-B804-2E880C4ECDD3}</Project>
+      <Project>{934822FF-4900-48C8-996A-2BC4C585B081}</Project>
       <Name>Datos</Name>
     </ProjectReference>
     <ProjectReference Include="..\Logica\Logica.csproj">
-      <Project>{FBA2F8C9-A831-4663-9590-1E21AB4354F2}</Project>
+      <Project>{5124B270-9D6A-4144-AA11-E88654F68977}</Project>
       <Name>Logica</Name>
     </ProjectReference>
   </ItemGroup>
